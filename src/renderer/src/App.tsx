@@ -1,5 +1,7 @@
 import './styles/globals.css'
 
 export function App() {
-  return <h1 className='text-blue-500'>Hello Electron</h1>;
+  return (
+    <div className="h-screen w-screnn bg-flotes-900 text-flotes-100"></div>
+  )
 }
