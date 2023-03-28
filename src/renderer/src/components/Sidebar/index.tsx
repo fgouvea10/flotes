@@ -45,9 +45,7 @@ export function Sidebar() {
             <Navigation.SectionTitle>Workspace</Navigation.SectionTitle>
             <Navigation.SectionContent>
               <Navigation.Link>Untitled</Navigation.Link>
-              <Navigation.Link>Discover</Navigation.Link>
-              <Navigation.Link>Ignite</Navigation.Link>
-              <Navigation.Link>Rocketseat</Navigation.Link>
+              <Navigation.Link>Untitled 2</Navigation.Link>
             </Navigation.SectionContent>
           </Navigation.Section>
         </Navigation.Root>
