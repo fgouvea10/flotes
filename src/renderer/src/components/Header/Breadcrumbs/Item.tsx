@@ -12,8 +12,8 @@ export function Item({ isActive = false, children }: ItemProps) {
   return (
     <Comp
       href="#"
-      className={clsx('inline-flex items-center gap-2 hover:text-rotion-50', {
-        'text-rotion-50': isActive,
+      className={clsx('inline-flex items-center gap-2 hover:text-flotes-50', {
+        'text-flotes-50': isActive,
       })}
     >
       {children}

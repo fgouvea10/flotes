@@ -7,7 +7,7 @@ interface ToCRootProps {
 export function ToCRoot(props: ToCRootProps) {
   return (
     <div
-      className="flex flex-col text-sm text-rotion-100 gap-2 mt-2"
+      className="flex flex-col text-sm text-flotes-100 gap-2 mt-2"
       {...props}
     />
   )

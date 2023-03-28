@@ -9,10 +9,10 @@ export function Sidebar() {
   const isMacOS = process.platform === 'darwin'
 
   return (
-    <aside className="bg-rotion-800 flex-shrink-0 border-r border-rotion-600 h-screen relative group data-[state=open]:animate-slideIn data-[state=closed]:animate-slideOut overflow-hidden">
+    <aside className="bg-flotes-800 flex-shrink-0 border-r border-flotes-600 h-screen relative group data-[state=open]:animate-slideIn data-[state=closed]:animate-slideOut overflow-hidden">
       <button
         className={clsx(
-          'absolute h-5 w-5 right-4 text-rotion-200 hover:text-rotion-50 inline-flex items-center justify-center',
+          'absolute h-5 w-5 right-4 text-flotes-200 hover:text-flotes-50 inline-flex items-center justify-center',
           {
             'top-[1.125rem]': isMacOS,
             'top-6': !isMacOS,
