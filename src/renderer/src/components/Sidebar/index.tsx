@@ -46,12 +46,9 @@ export function Sidebar() {
           }
         )}
       >
-        <Profile />
-        <Search />
-
         <Navigation.Root>
           <Navigation.Section>
-            <Navigation.SectionTitle>Workspace</Navigation.SectionTitle>
+            <Navigation.SectionTitle>My workspaces</Navigation.SectionTitle>
             <Navigation.SectionContent>
               {data?.map((document) => (
                 <Navigation.Link key={document.id} to={`/documents/${document.id}`}>
