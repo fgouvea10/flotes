@@ -1,12 +1,12 @@
 import * as Collapsible from "@radix-ui/react-collapsible";
 import clsx from "clsx";
 import { CaretDoubleLeft } from "phosphor-react";
+import { useQuery } from "@tanstack/react-query";
 
 import * as Navigation from "./Navigation";
 import { CreatePage } from "./CreatePage";
 import { Profile } from "./Profile";
 import { Search } from "./Search";
-import { useQuery } from "@tanstack/react-query";
 
 export function Sidebar() {
   const isMacOS = process.platform === "darwin";
@@ -14,7 +14,7 @@ export function Sidebar() {
   const { data } = useQuery(["documents"], async () => {
     const response = await window.api.fetchDocuments();
 
-    return response;
+    return response.data;
   });
 
   return (
