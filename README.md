@@ -1,34 +1,12 @@
-# flotes
+# Flotes
+Flotes is a versatile productivity tool that combines note-taking and task management in a customizable workspace. With Flotes, you can easily organize your work and personal tasks, take notes, and collaborate with others in real-time.
 
-An Electron application with React and TypeScript
+## Features
+- **Customizable workspace**: Flotes allows you to create a personalized workspace that suits your needs.
 
-## Recommended IDE Setup
+- **Note-taking**: With Flotes, you can take notes and create to-do lists to keep yourself organized and on track.
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- **Cross-platform**: Flotes is built using Electron, ReactJS, Tailwind, and Vite, making it compatible with multiple platforms, including Windows, macOS, and Linux.
 
-## Project Setup
-
-### Install
-
-```bash
-$ npm install
-```
-
-### Development
-
-```bash
-$ npm run dev
-```
-
-### Build
-
-```bash
-# For windows
-$ npm run build:win
-
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
+## Contributing
+If you're interested in contributing to Flotes, please see our contributing guidelines for more information.
