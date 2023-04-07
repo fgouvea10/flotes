@@ -3,8 +3,8 @@ import * as Collapsible from "@radix-ui/react-collapsible";
 import { Code, CaretDoubleRight, TrashSimple } from "phosphor-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import * as Breadcrumbs from "./Breadcrumbs";
 
+import * as Breadcrumbs from "./Breadcrumbs";
 import { Document } from "../../../../shared/types/ipc";
 
 interface Props {
