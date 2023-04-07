@@ -5,7 +5,11 @@ import Document from "@tiptap/extension-document";
 import { EditorContent, useEditor } from "@tiptap/react";
 import Placeholder from "@tiptap/extension-placeholder";
 
-export function Editor() {
+interface EditorProps {
+  content: string
+}
+
+export function Editor({ content }: EditorProps) {
   const editor = useEditor({
     extensions: [
       Document.extend({
@@ -21,7 +25,7 @@ export function Editor() {
         emptyEditorClass: 'before:content-[attr(data-placeholder)] before:text-gray-500 before:h-0 before:float-left before:pointer-events-none'
       })
     ],
-    content: '<h1>Back-end</h1><p>esse doc</p>',
+    content,
     autofocus: 'end',
     editorProps: {
       attributes: {

@@ -1,6 +1,6 @@
 import { Router, Route } from "electron-router-dom";
-import { DefaultLayout } from "./layouts/default";
 
+import { DefaultLayout } from "./layouts/default";
 import { Blank } from "./pages/blank";
 import { Document } from "./pages/document";
 
@@ -10,7 +10,7 @@ export function Routes() {
       main={
         <Route path="/" element={<DefaultLayout />}>
           <Route path="/" element={<Blank />} />
-          <Route path="/document" element={<Document />} />
+          <Route path="/documents/:id" element={<Document />} />
         </Route>
       }
     />
