@@ -1,33 +1,38 @@
-import * as Collapsible from '@radix-ui/react-collapsible'
-import clsx from 'clsx'
-import { CaretDoubleLeft } from 'phosphor-react'
+import * as Collapsible from "@radix-ui/react-collapsible";
+import clsx from "clsx";
+import { CaretDoubleLeft } from "phosphor-react";
 
-import * as Navigation from './Navigation'
-import { CreatePage } from './CreatePage'
-import { Profile } from './Profile'
-import { Search } from './Search'
+import * as Navigation from "./Navigation";
+import { CreatePage } from "./CreatePage";
+import { Profile } from "./Profile";
+import { Search } from "./Search";
+import { useQuery } from "@tanstack/react-query";
 
 export function Sidebar() {
-  const isMacOS = process.platform === 'darwin'
+  const isMacOS = process.platform === "darwin";
 
-  window.api.fetchDocuments()
+  const { data } = useQuery(["documents"], async () => {
+    const response = await window.api.fetchDocuments();
+
+    return response;
+  });
 
   return (
     <Collapsible.Content className="bg-flotes-800 flex-shrink-0 border-r border-flotes-600 h-screen relative group data-[state=open]:animate-slideIn data-[state=closed]:animate-slideOut overflow-hidden">
       <Collapsible.Trigger
         className={clsx(
-          'absolute h-5 w-5 right-4 text-flotes-200 hover:text-flotes-50 inline-flex items-center justify-center',
+          "absolute h-5 w-5 right-4 text-flotes-200 hover:text-flotes-50 inline-flex items-center justify-center",
           {
-            'top-[1.125rem]': isMacOS,
-            'top-6': !isMacOS,
-          },
+            "top-[1.125rem]": isMacOS,
+            "top-6": !isMacOS,
+          }
         )}
       >
         <CaretDoubleLeft className="h-4 w-4" />
       </Collapsible.Trigger>
 
       <div
-        className={clsx('region-drag h-14', {
+        className={clsx("region-drag h-14", {
           block: isMacOS,
           hidden: !isMacOS,
         })}
@@ -35,10 +40,10 @@ export function Sidebar() {
 
       <div
         className={clsx(
-          'flex-1 flex flex-col gap-8 h-full w-[240px] group-data-[state=open]:opacity-100 group-data-[state=closed]:opacity-0 transition-opacity duration-200',
+          "flex-1 flex flex-col gap-8 h-full w-[240px] group-data-[state=open]:opacity-100 group-data-[state=closed]:opacity-0 transition-opacity duration-200",
           {
-            'pt-6': !isMacOS,
-          },
+            "pt-6": !isMacOS,
+          }
         )}
       >
         <Profile />
@@ -48,8 +53,11 @@ export function Sidebar() {
           <Navigation.Section>
             <Navigation.SectionTitle>Workspace</Navigation.SectionTitle>
             <Navigation.SectionContent>
-              <Navigation.Link>Untitled</Navigation.Link>
-              <Navigation.Link>Untitled 2</Navigation.Link>
+              {data?.map((document) => (
+                <Navigation.Link key={document.id}>
+                  {document.title}
+                </Navigation.Link>
+              ))}
             </Navigation.SectionContent>
           </Navigation.Section>
         </Navigation.Root>
@@ -57,5 +65,5 @@ export function Sidebar() {
         <CreatePage />
       </div>
     </Collapsible.Content>
-  )
+  );
 }

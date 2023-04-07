@@ -1,6 +1,6 @@
 import { ipcMain } from "electron";
 
-ipcMain.handle('fetch-documents', async (_, params) => {
+ipcMain.handle('fetch-documents', async () => {
   return [
     { id: 1, title: 'Document title' },
     { id: 2, title: 'Document title 2' },
