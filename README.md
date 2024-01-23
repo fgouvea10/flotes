@@ -1,5 +1,6 @@
 # Flotes
-Flotes is a versatile productivity tool that combines note-taking and task management in a customizable workspace. With Flotes, you can easily organize your work and personal tasks, take notes, and collaborate with others in real-time.
+Thinking about creating a desktop note-taking application and also had the idea of learning Electron, so why not combine the useful with the enjoyable?
+Flotes is a versatile productivity tool that combines note-taking and task management in a customizable workspace. With Flotes, you can easily organize your work and personal tasks, take notes and collaborate with others in real-time.
 
 ## Features
 - **Customizable workspace**: Flotes allows you to create a personalized workspace that suits your needs.
